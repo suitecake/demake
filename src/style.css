@@ -1,6 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   font-family: system-ui, sans-serif;
@@ -8,13 +15,165 @@ body {
   color: #111;
 }
 
+main {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 h1 {
   font-size: 2.5rem;
-  margin: 0 16px;
+  margin: 0;
 }
 
 .game {
   font-size: 1.25rem;
-  margin: 8px 16px 0;
+  font-weight: 600;
+  margin: 8px 0 0;
+}
+
+.badge {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fde68a;
+  font-size: 0.875rem;
+}
+
+.prompt {
+  margin: 24px 0 16px;
+  color: #444;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.slot {
+  aspect-ratio: 1;
+  border: 2px dashed #bbb;
+  border-radius: 12px;
+  background: #fafafa;
+  font-size: 2rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slot.filled {
+  border-style: solid;
+  border-color: #ddd;
+  background: #fff;
+}
+
+.slot.selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.actions button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.entry {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  font-size: 1.25rem;
   text-align: center;
+}
+
+.entry:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.message {
+  min-height: 1.5em;
+  margin: 8px 0 0;
+  color: #b91c1c;
+}
+
+.hint {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.primary {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary:disabled {
+  background: #cbd5e1;
+  cursor: default;
+}
+
+.final {
+  margin: 24px 0 16px;
+  font-size: 3rem;
+  letter-spacing: 4px;
+}
+
+.preview {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font: 1rem ui-monospace, monospace;
+  resize: none;
+  background: #fafafa;
+}
+
+.done .message {
+  color: #15803d;
+}
+
+.note {
+  margin: 16px 0 0;
+  color: #444;
+}
+
+.earlier {
+  font-size: 1.5rem;
 }
