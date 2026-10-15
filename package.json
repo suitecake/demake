@@ -10,9 +10,12 @@
     "dev": "vite",
     "build": "tsc && vitest run && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate:emoji": "node scripts/generate-emoji.ts"
   },
   "devDependencies": {
+    "emojibase": "^17.0.0",
+    "emojibase-data": "^17.0.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.2",
     "vitest": "^5.0.5"
