@@ -1,6 +1,13 @@
-// M0 walking skeleton: the puzzle number is hardcoded until M1 wires up the date → puzzle pipeline.
+import { gameFor, puzzleNumber } from './puzzle';
+
 const app = document.querySelector<HTMLElement>('#app')!;
+const n = puzzleNumber(new Date());
 
 const heading = document.createElement('h1');
-heading.textContent = 'Demake #1';
-app.append(heading);
+heading.textContent = `Demake #${n}`;
+
+const title = document.createElement('p');
+title.className = 'game';
+title.textContent = gameFor(n);
+
+app.append(heading, title);
