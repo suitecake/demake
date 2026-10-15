@@ -76,6 +76,7 @@ The `||...||` is Discord spoiler syntax. Readers can guess first, then click to 
 ## Working agreements for the agent
 - Work one milestone at a time. Don't build ahead.
 - Keep changes small and reviewable. Explain what you changed and why.
+- One branch and one draft PR per milestone (e.g. `m1`), with one commit per reviewable slice. Push as you go so the Netlify deploy preview stays current. Small one-offs ride along on the open milestone branch.
 - Never commit secrets. API keys go in environment variables.
 
 ## Seed games
